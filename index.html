@@ -1,57 +1,163 @@
-<section class="services">
-  <h2>What We Do</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StageCraft | Stand-Up Show Management</title>
 
-  <div class="services-grid">
-    <div class="service-card">
-      <img src="https://illustrations.popsy.co/gray/microphone.svg" alt="Artist Coordination">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{background:#0b0b0b;color:#fff;line-height:1.6}
+
+/* HERO */
+header{
+min-height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+url("https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1600&q=80");
+background-size:110%;
+background-position:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+transition:background-size 12s ease;
+padding:20px;
+}
+header.active{background-size:120%}
+
+header h1{font-size:46px;margin-bottom:10px;opacity:0;transform:translateY(30px);transition:.8s}
+header p{font-size:18px;opacity:0;transform:translateY(30px);transition:.8s .2s}
+.actions{margin-top:20px;opacity:0;transform:translateY(30px);transition:.8s .4s}
+
+header.active h1,
+header.active p,
+header.active .actions{
+opacity:1;
+transform:translateY(0);
+}
+
+.btn{
+padding:14px 30px;
+border-radius:30px;
+border:none;
+font-weight:bold;
+margin:6px;
+cursor:pointer
+}
+.call{background:#ff9800;color:#000}
+.wa{background:#25D366;color:#000}
+
+/* SECTIONS */
+section{
+padding:70px 20px;
+max-width:1100px;
+margin:auto;
+opacity:0;
+transform:translateY(40px);
+transition:.8s
+}
+section.show{opacity:1;transform:translateY(0)}
+
+h2{text-align:center;font-size:32px;margin-bottom:30px}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px
+}
+
+.card{
+background:#1c1c1c;
+padding:30px 20px;
+border-radius:16px;
+text-align:center
+}
+
+/* SERVICES */
+.service-card img{
+max-width:140px;
+margin-bottom:18px
+}
+.service-card h3{
+color:#ff9800;
+margin-bottom:8px
+}
+
+/* FOOTER */
+footer{
+padding:40px 20px;
+text-align:center;
+background:#000;
+opacity:0;
+transform:translateY(40px);
+transition:.8s
+}
+footer.show{opacity:1;transform:translateY(0)}
+</style>
+</head>
+
+<body>
+
+<header id="hero">
+  <h1>StageCraft</h1>
+  <p>Crafting Comedy. Executing Shows.</p>
+  <div class="actions">
+    <a href="tel:8861605754"><button class="btn call">Call Now</button></a>
+    <a href="https://wa.me/918861605754"><button class="btn wa">WhatsApp</button></a>
+  </div>
+</header>
+
+<section>
+  <h2>What We Do</h2>
+  <div class="grid">
+    <div class="card service-card">
+      <img src="https://illustrations.popsy.co/gray/microphone.svg">
       <h3>Artist Coordination</h3>
       <p>Managing comedians, schedules, and show requirements.</p>
     </div>
 
-    <div class="service-card">
-      <img src="https://illustrations.popsy.co/gray/stage.svg" alt="Venue Management">
+    <div class="card service-card">
+      <img src="https://illustrations.popsy.co/gray/stage.svg">
       <h3>Venue Management</h3>
       <p>Handling auditoriums, comedy clubs, stage and sound.</p>
     </div>
 
-    <div class="service-card">
-      <img src="https://illustrations.popsy.co/gray/event.svg" alt="Show Execution">
+    <div class="card service-card">
+      <img src="https://illustrations.popsy.co/gray/event.svg">
       <h3>Show Execution</h3>
       <p>End-to-end execution for smooth live shows.</p>
     </div>
   </div>
 </section>
 
-<style>
-.services { text-align: center; }
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
-.service-card {
-  background: #1c1c1c;
-  padding: 30px 20px;
-  border-radius: 16px;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: .8s ease;
-}
-.service-card img {
-  max-width: 140px;
-  margin-bottom: 18px;
-}
-.service-card h3 {
-  margin-bottom: 8px;
-  color: #ff9800;
-}
-.service-card.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-</style>
+<section>
+  <h2>Why StageCraft</h2>
+  <div class="grid">
+    <div class="card">Shows managed across India</div>
+    <div class="card">Comedy clubs & auditoriums</div>
+    <div class="card">Professional coordination</div>
+  </div>
+</section>
+
+<footer>
+  <p><b>Bookings & Enquiries</b></p>
+  <p>📞 8861605754</p>
+  <p>📲 WhatsApp available</p>
+  <p>✉️ rjarif45@gmail.com</p>
+  <p>India</p>
+</footer>
 
 <script>
-document.querySelectorAll(".service-card").forEach(el => obs.observe(el));
+window.onload=()=>document.getElementById("hero").classList.add("active");
+
+const obs=new IntersectionObserver(e=>{
+e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("show")})
+},{threshold:.2});
+
+document.querySelectorAll("section,footer").forEach(el=>obs.observe(el));
 </script>
+
+</body>
+</html>
