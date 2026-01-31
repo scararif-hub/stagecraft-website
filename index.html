@@ -1,244 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>StageCraft | Stand-Up Comedy & Live Show Management</title>
-  <meta name="description" content="StageCraft manages stand-up comedy shows across India. Artist coordination, venue management, and end-to-end execution."/>
+<section class="services">
+  <h2>What We Do</h2>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    body {
-      background: #0f0f0f;
-      color: #ffffff;
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    /* HERO */
-    header {
-      min-height: 90vh;
-      background:
-        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-        url("https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=1600&q=80");
-      background-size: 105%;
-      background-position: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 40px 20px;
-      transition: background-size 12s ease;
-    }
-
-    header.show {
-      background-size: 115%;
-    }
-
-    header h1 {
-      font-size: 46px;
-      margin-bottom: 15px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease;
-    }
-
-    header p {
-      font-size: 18px;
-      max-width: 700px;
-      margin-bottom: 25px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease 0.2s;
-    }
-
-    header .actions {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease 0.4s;
-    }
-
-    header.show h1,
-    header.show p,
-    header.show .actions {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 28px;
-      border-radius: 30px;
-      background: #ff9800;
-      color: #000;
-      font-weight: bold;
-      margin: 8px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .btn.whatsapp {
-      background: #25D366;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-    }
-
-    /* SECTIONS */
-    section {
-      padding: 70px 20px;
-      max-width: 1100px;
-      margin: auto;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease;
-    }
-
-    section.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    section h2 {
-      text-align: center;
-      font-size: 32px;
-      margin-bottom: 30px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-    }
-
-    .card {
-      background: #1c1c1c;
-      padding: 25px;
-      border-radius: 14px;
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-      color: #ff9800;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #000;
-      text-align: center;
-      padding: 40px 20px;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease;
-    }
-
-    footer.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    footer p {
-      margin: 8px 0;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 34px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- HERO -->
-  <header>
-    <h1>StageCraft</h1>
-    <p>Crafting Comedy. Executing Shows.</p>
-    <div class="actions">
-      <a href="tel:8861605754" class="btn">Call Now</a>
-      <a href="https://wa.me/918861605754" class="btn whatsapp">WhatsApp</a>
+  <div class="services-grid">
+    <div class="service-card">
+      <img src="https://illustrations.popsy.co/gray/microphone.svg" alt="Artist Coordination">
+      <h3>Artist Coordination</h3>
+      <p>Managing comedians, schedules, and show requirements.</p>
     </div>
-  </header>
 
-  <!-- SERVICES -->
-  <section>
-    <h2>What We Do</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Artist Coordination</h3>
-        <p>Professional coordination with comedians and talent teams.</p>
-      </div>
-      <div class="card">
-        <h3>Venue Management</h3>
-        <p>Handling auditoriums, clubs, sound checks, and schedules.</p>
-      </div>
-      <div class="card">
-        <h3>Show Execution</h3>
-        <p>End-to-end execution ensuring smooth, on-time shows.</p>
-      </div>
+    <div class="service-card">
+      <img src="https://illustrations.popsy.co/gray/stage.svg" alt="Venue Management">
+      <h3>Venue Management</h3>
+      <p>Handling auditoriums, comedy clubs, stage and sound.</p>
     </div>
-  </section>
 
-  <!-- CREDIBILITY -->
-  <section>
-    <h2>Why Work With Us</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Pan-India Experience</h3>
-        <p>Shows managed across multiple cities in India.</p>
-      </div>
-      <div class="card">
-        <h3>End-to-End Handling</h3>
-        <p>From planning to performance, everything handled professionally.</p>
-      </div>
-      <div class="card">
-        <h3>WhatsApp Friendly</h3>
-        <p>Quick coordination and bookings via WhatsApp.</p>
-      </div>
+    <div class="service-card">
+      <img src="https://illustrations.popsy.co/gray/event.svg" alt="Show Execution">
+      <h3>Show Execution</h3>
+      <p>End-to-end execution for smooth live shows.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p><strong>Bookings & Enquiries</strong></p>
-    <p>📞 <a href="tel:8861605754">8861605754</a></p>
-    <p>📲 <a href="https://wa.me/918861605754">Connect on WhatsApp</a></p>
-    <p>✉️ rjarif45@gmail.com</p>
-    <p>India</p>
-  </footer>
+<style>
+.services { text-align: center; }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+.service-card {
+  background: #1c1c1c;
+  padding: 30px 20px;
+  border-radius: 16px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: .8s ease;
+}
+.service-card img {
+  max-width: 140px;
+  margin-bottom: 18px;
+}
+.service-card h3 {
+  margin-bottom: 8px;
+  color: #ff9800;
+}
+.service-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
 
-  <script>
-    // Hero animation
-    window.addEventListener("load", () => {
-      document.querySelector("header").classList.add("show");
-    });
-
-    // Scroll reveal
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    }, { threshold: 0.15 });
-
-    document.querySelectorAll("section, footer").forEach(el => {
-      observer.observe(el);
-    });
-  </script>
-
-</body>
-</html>
+<script>
+document.querySelectorAll(".service-card").forEach(el => obs.observe(el));
+</script>
