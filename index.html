@@ -3,154 +3,140 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StageCraft | Stand-Up Show Management</title>
+<title>StageCraft</title>
 
-<!-- GOOGLE FONT -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- CRAZY BOLD FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family: 'Poppins', sans-serif;
 }
 
 body{
-  background:#0b0b0b;
+  background:#050505;
   color:#ffffff;
-  line-height:1.7;
+  font-family:'Montserrat', sans-serif;
+  overflow-x:hidden;
 }
 
 /* HERO */
 header{
-  min-height:100vh;
+  height:100vh;
   background:
-    linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
+    linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.85)),
     url("https://images.unsplash.com/photo-1518972559570-7cc1309f3229?auto=format&fit=crop&w=1600&q=80");
-  background-size:110%;
+  background-size:cover;
   background-position:center;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
-  padding:20px;
-  transition:background-size 12s ease;
 }
 
-header.show{
-  background-size:120%;
-}
-
+/* BIG CRAZY TITLE */
 header h1{
-  font-size:52px;
-  font-weight:700;
-  margin-bottom:12px;
-  opacity:0;
-  transform:translateY(40px);
-  transition:1s;
+  font-family:'Bebas Neue', cursive;
+  font-size:96px;
+  letter-spacing:6px;
+  animation: popIn 1.2s ease forwards;
 }
 
 header p{
   font-size:20px;
-  font-weight:300;
+  margin-top:10px;
   opacity:0;
-  transform:translateY(40px);
-  transition:1s .2s;
+  animation: fadeUp 1s ease forwards;
+  animation-delay:.6s;
 }
 
 .actions{
-  margin-top:25px;
+  margin-top:30px;
   opacity:0;
-  transform:translateY(40px);
-  transition:1s .4s;
-}
-
-header.show h1,
-header.show p,
-header.show .actions{
-  opacity:1;
-  transform:translateY(0);
+  animation: fadeUp 1s ease forwards;
+  animation-delay:1s;
 }
 
 .btn{
-  padding:14px 34px;
+  padding:14px 36px;
   border-radius:40px;
   border:none;
-  font-weight:600;
   margin:8px;
+  font-size:16px;
+  font-weight:700;
   cursor:pointer;
   transition:.3s;
-}
-
-.btn:hover{
-  transform:translateY(-3px);
 }
 
 .call{background:#ff9800;color:#000;}
 .wa{background:#25D366;color:#000;}
 
-/* SECTIONS */
-section{
-  padding:80px 20px;
-  max-width:1100px;
-  margin:auto;
-  opacity:0;
-  transform:translateY(50px);
-  transition:1s;
+.btn:hover{
+  transform:scale(1.1) rotate(-1deg);
 }
 
-section.show{
-  opacity:1;
-  transform:translateY(0);
+/* SECTION */
+section{
+  padding:90px 20px;
+  max-width:1200px;
+  margin:auto;
 }
 
 h2{
+  font-family:'Bebas Neue', cursive;
+  font-size:54px;
   text-align:center;
-  font-size:34px;
-  font-weight:600;
-  margin-bottom:40px;
+  margin-bottom:50px;
+  letter-spacing:4px;
 }
 
-/* GRID */
+/* CARDS */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-  gap:35px;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;
 }
 
 .card{
-  background:#1c1c1c;
-  padding:30px 22px;
-  border-radius:18px;
+  background:#111;
+  border-radius:20px;
+  padding:25px;
   text-align:center;
-  transition:.4s;
+  transform:scale(0.7) rotateX(40deg);
+  opacity:0;
+  transition:1s;
 }
 
-.card:hover{
-  transform:translateY(-8px);
+.card.show{
+  transform:scale(1) rotateX(0);
+  opacity:1;
 }
 
 .card img{
   width:100%;
-  border-radius:14px;
-  margin-bottom:18px;
+  border-radius:16px;
+  margin-bottom:20px;
 }
 
 .card h3{
-  color:#ff9800;
+  font-family:'Bebas Neue', cursive;
+  font-size:32px;
+  letter-spacing:2px;
   margin-bottom:10px;
-  font-weight:600;
+  color:#ff9800;
 }
 
 /* FOOTER */
 footer{
   background:#000;
   text-align:center;
-  padding:45px 20px;
+  padding:50px 20px;
+  font-size:14px;
   opacity:0;
-  transform:translateY(40px);
+  transform:translateY(50px);
   transition:1s;
 }
 
@@ -159,78 +145,78 @@ footer.show{
   transform:translateY(0);
 }
 
-footer p{
-  margin:6px 0;
-  font-weight:300;
+/* ANIMATIONS */
+@keyframes popIn{
+  0%{transform:scale(0.3);opacity:0;}
+  70%{transform:scale(1.1);}
+  100%{transform:scale(1);opacity:1;}
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(40px);}
+  to{opacity:1;transform:translateY(0);}
 }
 </style>
 </head>
 
 <body>
 
-<header id="hero">
-  <h1>StageCraft</h1>
-  <p>Crafting Comedy. Executing Shows.</p>
+<header>
+  <h1>STAGECRAFT</h1>
+  <p>CRAFTING COMEDY • EXECUTING SHOWS</p>
+
   <div class="actions">
-    <a href="tel:8861605754"><button class="btn call">Call Now</button></a>
-    <a href="https://wa.me/918861605754"><button class="btn wa">WhatsApp</button></a>
+    <a href="tel:8861605754"><button class="btn call">CALL NOW</button></a>
+    <a href="https://wa.me/918861605754"><button class="btn wa">WHATSAPP</button></a>
   </div>
 </header>
 
 <section>
-  <h2>What We Do</h2>
+  <h2>WHAT WE DO</h2>
+
   <div class="grid">
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80">
-      <h3>Artist Coordination</h3>
-      <p>Managing comedians, schedules, and show requirements.</p>
+      <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=900&q=80">
+      <h3>ARTIST COORDINATION</h3>
+      <p>Handling comedians, schedules and show flow.</p>
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=800&q=80">
-      <h3>Venue Management</h3>
-      <p>Handling auditoriums, comedy clubs, stage and sound.</p>
+      <!-- AUDITORIUM IMAGE -->
+      <img src="https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=900&q=80">
+      <h3>VENUE MANAGEMENT</h3>
+      <p>Auditoriums, seating, stage and sound systems.</p>
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=800&q=80">
-      <h3>Show Execution</h3>
-      <p>End-to-end execution of stand-up comedy shows.</p>
+      <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=900&q=80">
+      <h3>SHOW EXECUTION</h3>
+      <p>End-to-end execution of live comedy shows.</p>
     </div>
-  </div>
-</section>
-
-<section>
-  <h2>Why StageCraft</h2>
-  <div class="grid">
-    <div class="card">Pan-India show experience</div>
-    <div class="card">Professional & reliable execution</div>
-    <div class="card">Fast WhatsApp coordination</div>
   </div>
 </section>
 
 <footer>
-  <p><strong>Bookings & Enquiries</strong></p>
+  <p><b>Bookings & Enquiries</b></p>
   <p>📞 8861605754</p>
-  <p>📲 WhatsApp available</p>
   <p>✉️ rjarif45@gmail.com</p>
   <p>India</p>
 </footer>
 
 <script>
-window.onload = () => {
-  document.getElementById("hero").classList.add("show");
-};
+const cards=document.querySelectorAll(".card");
+const footer=document.querySelector("footer");
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add("show");
     }
   });
-},{threshold:0.15});
+},{threshold:.2});
 
-document.querySelectorAll("section, footer").forEach(el => observer.observe(el));
+cards.forEach(c=>obs.observe(c));
+obs.observe(footer);
 </script>
 
 </body>
