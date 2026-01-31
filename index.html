@@ -104,4 +104,89 @@ body{
 </section>
 
 </body>
+  <style>
+/* SERVICES SECTION */
+.services{
+  padding:100px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.services h2{
+  font-family:'Bebas Neue', cursive;
+  font-size:56px;
+  text-align:center;
+  letter-spacing:4px;
+  margin-bottom:60px;
+}
+
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+  gap:40px;
+}
+
+.service-card{
+  background:#111;
+  border-radius:22px;
+  padding:40px 30px;
+  text-align:center;
+  transform:translateY(80px) scale(.85);
+  opacity:0;
+  transition:1s ease;
+}
+
+.service-card.show{
+  transform:translateY(0) scale(1);
+  opacity:1;
+}
+
+.service-card h3{
+  font-family:'Bebas Neue', cursive;
+  font-size:30px;
+  letter-spacing:2px;
+  margin-bottom:15px;
+  color:#ff9800;
+}
+
+.service-card p{
+  font-size:16px;
+  opacity:.85;
+}
+</style>
+
+<section class="services">
+  <h2>WHAT WE DO</h2>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>ARTIST COORDINATION</h3>
+      <p>Managing comedians, schedules and show flow.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>VENUE MANAGEMENT</h3>
+      <p>Auditoriums, seating, stage setup and sound systems.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>SHOW EXECUTION</h3>
+      <p>End-to-end execution of live stand-up comedy shows.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+const serviceCards = document.querySelectorAll(".service-card");
+
+const serviceObserver = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+},{threshold:0.2});
+
+serviceCards.forEach(card=>serviceObserver.observe(card));
+</script>
 </html>
