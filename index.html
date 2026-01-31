@@ -62,7 +62,7 @@ footer p { margin-bottom: 10px; }
 
   </style>
 </head>
-<body>  <!-- Hero -->  <header>
+<body>  <!-- Hero -->  <header style="background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url('https://images.unsplash.com/photo-1515165562835-c4c4e0c4b1a3?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;">
     <h1>StageCraft</h1>
     <p>Crafting Comedy. Executing Shows.</p>
     <a href="tel:8861605754" class="btn">Call Now</a>
@@ -70,10 +70,10 @@ footer p { margin-bottom: 10px; }
   </header>  <!-- Services -->  <section>
     <h2>What We Do</h2>
     <div class="services">
-      <div class="card">
-        <h3>Artist Coordination</h3>
-        <p>End-to-end coordination with stand-up comedians and talent management teams.</p>
-      </div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1611348586752-2f8c62c1f7c1?auto=format&fit=crop&w=800&q=80" style="width:100%;border-radius:12px" alt="Indian stand-up comedian on stage"></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1620049274112-5a1d5f02fba2?auto=format&fit=crop&w=800&q=80" style="width:100%;border-radius:12px" alt="Indian comedy club audience"></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?auto=format&fit=crop&w=800&q=80" style="width:100%;border-radius:12px" alt="Indian auditorium live show"></div>
+    </div>
       <div class="card">
         <h3>Show & Venue Management</h3>
         <p>Handling venue setup, scheduling, sound checks, and on-ground execution.</p>
@@ -87,7 +87,22 @@ footer p { margin-bottom: 10px; }
         <p>Show promotions coordination and smooth event-day execution.</p>
       </div>
     </div>
+  </section>  <!-- Gallery -->  <section>
+    <h2>Live Show Atmosphere</h2>
+    <div class="services">
+      <div class="card"><img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&w=800&q=80" style="width:100%;border-radius:12px" alt="Indian auditorium stand-up comedy"></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1598387846148-47e82b2f9d9d?auto=format&fit=crop&w=800&q=80" style="width:100%;border-radius:12px" alt="Indian comedy stage audience"></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1627934898600-3c6e8bde7975?auto=format&fit=crop&w=800&q=80" style="width:100%;border-radius:12px" alt="Indian live comedy audience"></div>
+    </div>
   </section>  <!-- Credibility -->  <section>
+    <h2>Artists</h2>
+    <div class="stats">
+      <div class="stat">
+        <h3>Abhishek Upmanyu</h3>
+        <p>Stand-Up Comedian</p>
+      </div>
+    </div>
+  </section>  <section>
     <h2>Experience</h2>
     <div class="stats">
       <div class="stat">
@@ -95,8 +110,8 @@ footer p { margin-bottom: 10px; }
         <p>Shows Managed</p>
       </div>
       <div class="stat">
-        <h3>Bengaluru</h3>
-        <p>Primary City</p>
+        <h3>India</h3>
+        <p>Primary Market</p>
       </div>
       <div class="stat">
         <h3>End-to-End</h3>
@@ -107,22 +122,51 @@ footer p { margin-bottom: 10px; }
     <h2>Why Work With Us</h2>
     <div class="why">
       <div class="card">
-        <h3>Reliable</h3>
-        <p>Clear communication and dependable coordination.</p>
+        <h3>Show Experience</h3>
+        <p>Shows managed across multiple cities in India with experience in auditoriums, comedy clubs, and live venues.</p>
       </div>
       <div class="card">
-        <h3>Professional</h3>
-        <p>Focused on smooth execution without last-minute chaos.</p>
+        <h3>End-to-End Execution</h3>
+        <p>Complete stand-up show execution — artist coordination, venue handling, scheduling, and on-ground management.</p>
       </div>
       <div class="card">
-        <h3>Artist-Friendly</h3>
-        <p>Respectful handling of artist requirements and timelines.</p>
+        <h3>Professional & Reliable</h3>
+        <p>Clear communication, reliable coordination, and smooth execution without last-minute chaos.</p>
       </div>
     </div>
   </section>  <!-- Contact -->  <footer>
-    <p><strong>Contact</strong></p>
-    <p>📞 8861605754</p>
+    <p><strong>Bookings & Enquiries</strong></p>
+    <p>📞 <a href="tel:8861605754">8861605754</a></p>
+    <p>📲 <a href="https://wa.me/918861605754">Connect on WhatsApp</a></p>
     <p>✉️ rjarif45@gmail.com</p>
-    <p>Bengaluru, India</p>
-  </footer></body>
-  </html>
+    <p>India</p>
+  </footer>  <script>
+    // Hero text reveal
+    window.addEventListener('load', () => {
+      document.querySelector('header').classList.add('show');
+    });
+
+    // Scroll fade-up animation
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('section, footer').forEach(sec => {
+      sec.classList.add('fade');
+      observer.observe(sec);
+    });
+  </script>  <style>
+    header { background-size: 105%; transition: background-size 12s ease; }
+    header.show { background-size: 115%; }
+
+    .fade { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+    .fade.show { opacity: 1; transform: translateY(0); }
+
+    .btn { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
+  </style></body>
+</html>
