@@ -14,7 +14,7 @@ header{
 min-height:100vh;
 background:
 linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
-url("https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1600&q=80");
+url("https://images.unsplash.com/photo-1515165562835-c4c4e0c4b1a3?auto=format&fit=crop&w=1600&q=80");
 background-size:110%;
 background-position:center;
 display:flex;
@@ -27,15 +27,30 @@ padding:20px;
 }
 header.active{background-size:120%}
 
-header h1{font-size:46px;margin-bottom:10px;opacity:0;transform:translateY(30px);transition:.8s}
-header p{font-size:18px;opacity:0;transform:translateY(30px);transition:.8s .2s}
-.actions{margin-top:20px;opacity:0;transform:translateY(30px);transition:.8s .4s}
-
+header h1{
+font-size:46px;
+margin-bottom:10px;
+opacity:0;
+transform:translateY(30px);
+transition:.8s
+}
+header p{
+font-size:18px;
+opacity:0;
+transform:translateY(30px);
+transition:.8s .2s
+}
+.actions{
+margin-top:20px;
+opacity:0;
+transform:translateY(30px);
+transition:.8s .4s
+}
 header.active h1,
 header.active p,
 header.active .actions{
 opacity:1;
-transform:translateY(0);
+transform:translateY(0)
 }
 
 .btn{
