@@ -3,95 +3,212 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StageCraft | Services</title>
+<title>StageCraft | Stand-Up Show Management</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
-body{background:#0b0b0b;color:#fff}
-
-/* NAV */
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 30px;
-background:#000;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
-nav a{color:#fff;text-decoration:none;margin-left:20px;font-weight:bold}
 
-/* SECTION */
+body{
+  background:#0b0b0b;
+  color:#ffffff;
+  line-height:1.6;
+}
+
+/* HERO */
+header{
+  min-height:100vh;
+  background:
+    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+    url("https://images.unsplash.com/photo-1518972559570-7cc1309f3229?auto=format&fit=crop&w=1600&q=80");
+  background-size:110%;
+  background-position:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+  transition:background-size 10s ease;
+}
+
+header.show{
+  background-size:120%;
+}
+
+header h1{
+  font-size:46px;
+  margin-bottom:10px;
+  opacity:0;
+  transform:translateY(30px);
+  transition:.8s;
+}
+
+header p{
+  font-size:18px;
+  opacity:0;
+  transform:translateY(30px);
+  transition:.8s .2s;
+}
+
+.actions{
+  margin-top:20px;
+  opacity:0;
+  transform:translateY(30px);
+  transition:.8s .4s;
+}
+
+header.show h1,
+header.show p,
+header.show .actions{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.btn{
+  padding:14px 30px;
+  border-radius:30px;
+  border:none;
+  font-weight:bold;
+  margin:6px;
+  cursor:pointer;
+}
+
+.call{background:#ff9800;color:#000;}
+.wa{background:#25D366;color:#000;}
+
+/* SECTIONS */
 section{
-padding:70px 20px;
-max-width:1100px;
-margin:auto;
+  padding:70px 20px;
+  max-width:1100px;
+  margin:auto;
+  opacity:0;
+  transform:translateY(40px);
+  transition:.8s;
 }
-h1{text-align:center;margin-bottom:40px}
+
+section.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+h2{
+  text-align:center;
+  font-size:32px;
+  margin-bottom:30px;
+}
 
 .grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+  gap:30px;
 }
 
 .card{
-background:#1c1c1c;
-padding:25px;
-border-radius:16px;
-text-align:center
+  background:#1c1c1c;
+  padding:30px 20px;
+  border-radius:16px;
+  text-align:center;
 }
 
 .card img{
-width:100%;
-border-radius:12px;
-margin-bottom:15px
+  width:100%;
+  border-radius:12px;
+  margin-bottom:15px;
+}
+
+.card h3{
+  color:#ff9800;
+  margin-bottom:10px;
 }
 
 /* FOOTER */
 footer{
-padding:40px 20px;
-text-align:center;
-background:#000
+  background:#000;
+  text-align:center;
+  padding:40px 20px;
+  opacity:0;
+  transform:translateY(40px);
+  transition:.8s;
+}
+
+footer.show{
+  opacity:1;
+  transform:translateY(0);
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-  <div><b>StageCraft</b></div>
-  <div>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
+<header id="hero">
+  <h1>StageCraft</h1>
+  <p>Crafting Comedy. Executing Shows.</p>
+  <div class="actions">
+    <a href="tel:8861605754"><button class="btn call">Call Now</button></a>
+    <a href="https://wa.me/918861605754"><button class="btn wa">WhatsApp</button></a>
   </div>
-</nav>
+</header>
 
 <section>
-  <h1>Our Services</h1>
-
+  <h2>What We Do</h2>
   <div class="grid">
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80">
+      <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80">
       <h3>Artist Coordination</h3>
-      <p>Handling comedians, schedules, and performance requirements.</p>
+      <p>Managing comedians, schedules, and show requirements.</p>
     </div>
 
     <div class="card">
       <img src="https://images.unsplash.com/photo-1497032205916-ac775f0649ae?auto=format&fit=crop&w=800&q=80">
       <h3>Venue Management</h3>
-      <p>Auditoriums, comedy clubs, sound and stage management.</p>
+      <p>Handling auditoriums, comedy clubs, stage and sound.</p>
     </div>
 
     <div class="card">
       <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=800&q=80">
       <h3>Show Execution</h3>
-      <p>End-to-end execution of live comedy shows.</p>
+      <p>End-to-end execution of stand-up comedy shows.</p>
     </div>
   </div>
 </section>
 
+<section>
+  <h2>Why StageCraft</h2>
+  <div class="grid">
+    <div class="card">Pan-India show experience</div>
+    <div class="card">Professional & reliable execution</div>
+    <div class="card">Fast WhatsApp coordination</div>
+  </div>
+</section>
+
 <footer>
-  <p>📞 8861605754 | ✉️ rjarif45@gmail.com</p>
+  <p><strong>Bookings & Enquiries</strong></p>
+  <p>📞 8861605754</p>
+  <p>📲 WhatsApp available</p>
+  <p>✉️ rjarif45@gmail.com</p>
+  <p>India</p>
 </footer>
+
+<script>
+window.onload = () => {
+  document.getElementById("hero").classList.add("show");
+};
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+},{threshold:0.2});
+
+document.querySelectorAll("section, footer").forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
