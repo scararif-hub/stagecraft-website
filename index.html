@@ -5,25 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>StageCraft | Stand-Up Show Management</title>
 
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 body{
   background:#0b0b0b;
   color:#ffffff;
-  line-height:1.6;
+  line-height:1.7;
 }
 
 /* HERO */
 header{
   min-height:100vh;
   background:
-    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+    linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
     url("https://images.unsplash.com/photo-1518972559570-7cc1309f3229?auto=format&fit=crop&w=1600&q=80");
   background-size:110%;
   background-position:center;
@@ -33,7 +36,7 @@ header{
   align-items:center;
   text-align:center;
   padding:20px;
-  transition:background-size 10s ease;
+  transition:background-size 12s ease;
 }
 
 header.show{
@@ -41,25 +44,27 @@ header.show{
 }
 
 header h1{
-  font-size:46px;
-  margin-bottom:10px;
+  font-size:52px;
+  font-weight:700;
+  margin-bottom:12px;
   opacity:0;
-  transform:translateY(30px);
-  transition:.8s;
+  transform:translateY(40px);
+  transition:1s;
 }
 
 header p{
-  font-size:18px;
+  font-size:20px;
+  font-weight:300;
   opacity:0;
-  transform:translateY(30px);
-  transition:.8s .2s;
+  transform:translateY(40px);
+  transition:1s .2s;
 }
 
 .actions{
-  margin-top:20px;
+  margin-top:25px;
   opacity:0;
-  transform:translateY(30px);
-  transition:.8s .4s;
+  transform:translateY(40px);
+  transition:1s .4s;
 }
 
 header.show h1,
@@ -70,12 +75,17 @@ header.show .actions{
 }
 
 .btn{
-  padding:14px 30px;
-  border-radius:30px;
+  padding:14px 34px;
+  border-radius:40px;
   border:none;
-  font-weight:bold;
-  margin:6px;
+  font-weight:600;
+  margin:8px;
   cursor:pointer;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
 }
 
 .call{background:#ff9800;color:#000;}
@@ -83,12 +93,12 @@ header.show .actions{
 
 /* SECTIONS */
 section{
-  padding:70px 20px;
+  padding:80px 20px;
   max-width:1100px;
   margin:auto;
   opacity:0;
-  transform:translateY(40px);
-  transition:.8s;
+  transform:translateY(50px);
+  transition:1s;
 }
 
 section.show{
@@ -98,47 +108,60 @@ section.show{
 
 h2{
   text-align:center;
-  font-size:32px;
-  margin-bottom:30px;
+  font-size:34px;
+  font-weight:600;
+  margin-bottom:40px;
 }
 
+/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-  gap:30px;
+  gap:35px;
 }
 
 .card{
   background:#1c1c1c;
-  padding:30px 20px;
-  border-radius:16px;
+  padding:30px 22px;
+  border-radius:18px;
   text-align:center;
+  transition:.4s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
 }
 
 .card img{
   width:100%;
-  border-radius:12px;
-  margin-bottom:15px;
+  border-radius:14px;
+  margin-bottom:18px;
 }
 
 .card h3{
   color:#ff9800;
   margin-bottom:10px;
+  font-weight:600;
 }
 
 /* FOOTER */
 footer{
   background:#000;
   text-align:center;
-  padding:40px 20px;
+  padding:45px 20px;
   opacity:0;
   transform:translateY(40px);
-  transition:.8s;
+  transition:1s;
 }
 
 footer.show{
   opacity:1;
   transform:translateY(0);
+}
+
+footer p{
+  margin:6px 0;
+  font-weight:300;
 }
 </style>
 </head>
@@ -164,7 +187,6 @@ footer.show{
     </div>
 
     <div class="card">
-      <!-- WORKING AUDITORIUM IMAGE -->
       <img src="https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=800&q=80">
       <h3>Venue Management</h3>
       <p>Handling auditoriums, comedy clubs, stage and sound.</p>
@@ -206,7 +228,7 @@ const observer = new IntersectionObserver(entries => {
       entry.target.classList.add("show");
     }
   });
-},{threshold:0.2});
+},{threshold:0.15});
 
 document.querySelectorAll("section, footer").forEach(el => observer.observe(el));
 </script>
