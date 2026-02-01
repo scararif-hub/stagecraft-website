@@ -3,16 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StageCraft | Stand-Up Comedy & Live Show Management</title>
+<title>StageCraft | Stand-Up Show Management</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<!-- Modern Font -->
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
-  font-family:'Inter',sans-serif;
-  background:#000;
-  color:#fff;
+  font-family:'Sora',sans-serif;
+  background:#0b0b0f;
+  color:#ffffff;
   line-height:1.7;
 }
 
@@ -23,10 +24,11 @@ body{
   margin:auto;
 }
 .center{text-align:center}
-h1,h2{font-weight:600}
-h1{font-size:54px}
+h1,h2{font-weight:700}
+h1{font-size:56px;letter-spacing:-1px}
 h2{font-size:42px;margin-bottom:20px}
 p{font-size:18px;opacity:.9}
+
 .fade{
   opacity:0;
   transform:translateY(40px);
@@ -50,17 +52,35 @@ p{font-size:18px;opacity:.9}
   justify-content:center;
   text-align:center;
 }
-.hero h1{margin-bottom:15px}
-.hero p{max-width:600px;margin:auto}
+.hero h1{
+  margin-bottom:14px;
+  color:#ffffff;
+}
+.hero p{
+  max-width:600px;
+  margin:auto;
+  color:#cfcfff;
+}
+
+/* BUTTONS */
 .btn{
-  margin-top:30px;
-  padding:14px 34px;
-  border-radius:30px;
+  margin-top:32px;
+  padding:14px 36px;
+  border-radius:32px;
   border:none;
   font-weight:600;
   cursor:pointer;
+  font-size:15px;
 }
-.whatsapp{background:#25D366;color:#000}
+.primary{
+  background:#6C5CE7;
+  color:#fff;
+}
+.whatsapp{
+  background:#25D366;
+  color:#000;
+  margin-left:12px;
+}
 
 /* IMAGE STORY */
 .full-image{
@@ -75,8 +95,8 @@ p{font-size:18px;opacity:.9}
 }
 .full-image h2{
   background:rgba(0,0,0,.6);
-  padding:20px 30px;
-  border-radius:12px;
+  padding:20px 34px;
+  border-radius:14px;
 }
 
 /* SERVICES */
@@ -86,9 +106,9 @@ p{font-size:18px;opacity:.9}
   gap:40px;
 }
 .card{
-  background:#111;
+  background:#13131a;
   padding:40px 30px;
-  border-radius:18px;
+  border-radius:20px;
 }
 
 /* VIDEOS */
@@ -101,7 +121,7 @@ p{font-size:18px;opacity:.9}
 .video-frame{
   width:230px;
   height:410px;
-  border-radius:20px;
+  border-radius:22px;
   overflow:hidden;
 }
 .video-frame iframe{
@@ -112,28 +132,32 @@ p{font-size:18px;opacity:.9}
 
 /* TESTIMONIAL */
 .testimonial{
-  background:#111;
+  background:#13131a;
   border-radius:18px;
   padding:40px;
   max-width:700px;
   margin:40px auto 0;
   font-style:italic;
+  color:#cfcfff;
 }
 
 /* CTA */
 .cta{
-  background:#ff9800;
-  color:#000;
+  background:#6C5CE7;
+  color:#fff;
 }
-.cta h2{margin-bottom:10px}
-.cta .btn{background:#000;color:#fff}
+.cta .btn{
+  background:#000;
+  color:#fff;
+}
 
 /* FOOTER */
 footer{
   padding:50px 20px;
   text-align:center;
-  background:#000;
+  background:#0b0b0f;
   font-size:15px;
+  color:#cfcfff;
 }
 </style>
 </head>
@@ -146,7 +170,7 @@ footer{
     <h1>StageCraft</h1>
     <p>Stand-Up Comedy & Live Show Management</p>
     <a href="https://wa.me/918861605754">
-      <button class="btn whatsapp">Contact on WhatsApp</button>
+      <button class="btn primary">Contact on WhatsApp</button>
     </a>
   </div>
 </section>
@@ -160,7 +184,7 @@ footer{
   </p>
 </section>
 
-<!-- AUDITORIUM VISUAL -->
+<!-- AUDITORIUM -->
 <section class="full-image" style="background-image:url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=1800&q=80')">
   <h2>Auditoriums • Comedy Clubs • Live Stages</h2>
 </section>
@@ -171,7 +195,7 @@ footer{
   <div class="cards">
     <div class="card">
       <h3>Artist Coordination</h3>
-      <p>Managing performers, schedules, show flow and requirements.</p>
+      <p>Managing performers, schedules and show flow.</p>
     </div>
     <div class="card">
       <h3>Venue Management</h3>
@@ -188,15 +212,9 @@ footer{
 <section class="section center fade">
   <h2>Live Show Moments</h2>
   <div class="videos">
-    <div class="video-frame">
-      <iframe src="https://www.youtube.com/embed/Mq90yeVR0yc" allowfullscreen></iframe>
-    </div>
-    <div class="video-frame">
-      <iframe src="https://www.youtube.com/embed/nWdUNiCN8xQ" allowfullscreen></iframe>
-    </div>
-    <div class="video-frame">
-      <iframe src="https://www.youtube.com/embed/PZ3qTkRZEmY" allowfullscreen></iframe>
-    </div>
+    <div class="video-frame"><iframe src="https://www.youtube.com/embed/Mq90yeVR0yc" allowfullscreen></iframe></div>
+    <div class="video-frame"><iframe src="https://www.youtube.com/embed/nWdUNiCN8xQ" allowfullscreen></iframe></div>
+    <div class="video-frame"><iframe src="https://www.youtube.com/embed/PZ3qTkRZEmY" allowfullscreen></iframe></div>
   </div>
 </section>
 
@@ -207,7 +225,6 @@ footer{
     We’ve managed multiple stand-up comedy shows across different venues,
     working with a range of performers and production teams.
   </p>
-
   <div class="testimonial">
     “Very smooth show execution, professional team.”
   </div>
