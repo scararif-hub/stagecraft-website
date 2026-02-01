@@ -3,176 +3,138 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StageCraft | Stand-Up Show Management</title>
+<title>StageCraft | Stand-Up Comedy & Live Show Management</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
-  background:#050505;
-  color:#fff;
   font-family:'Inter',sans-serif;
-  overflow-x:hidden;
+  background:#000;
+  color:#fff;
+  line-height:1.7;
 }
 
-/* GLOBAL */
-section{padding:110px 20px;max-width:1200px;margin:auto}
-h2{
-  font-family:'Bebas Neue',cursive;
-  font-size:56px;
-  letter-spacing:4px;
-  text-align:center;
-  margin-bottom:60px;
+/* COMMON */
+.section{
+  padding:120px 22px;
+  max-width:1100px;
+  margin:auto;
 }
-.btn{
-  padding:14px 36px;
-  border-radius:40px;
-  border:none;
-  font-weight:600;
-  cursor:pointer;
-  transition:.3s;
+.center{text-align:center}
+h1,h2{font-weight:600}
+h1{font-size:54px}
+h2{font-size:42px;margin-bottom:20px}
+p{font-size:18px;opacity:.9}
+.fade{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s ease;
 }
-.call{background:#ff9800;color:#000}
-.wa{background:#25D366;color:#000}
-.btn:hover{transform:scale(1.08)}
+.fade.show{
+  opacity:1;
+  transform:none;
+}
 
 /* HERO */
 .hero{
-  height:100vh;
+  min-height:100vh;
   background:
-    linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.9)),
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.9)),
     url("https://images.unsplash.com/photo-1518972559570-7cc1309f3229?auto=format&fit=crop&w=1600&q=80");
-  background-size:110%;
+  background-size:cover;
   background-position:center;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  transition:background-size 10s ease;
 }
-.hero.show{background-size:120%}
-
-.hero h1{
-  font-family:'Bebas Neue',cursive;
-  font-size:96px;
-  letter-spacing:6px;
-  opacity:0;
-  transform:scale(.6);
-  transition:1.2s ease;
-}
-.hero p{
-  font-size:20px;
-  margin-top:10px;
-  opacity:0;
-  transform:translateY(40px);
-  transition:1s ease .3s;
-}
-.actions{
+.hero h1{margin-bottom:15px}
+.hero p{max-width:600px;margin:auto}
+.btn{
   margin-top:30px;
-  opacity:0;
-  transform:translateY(40px);
-  transition:1s ease .6s;
+  padding:14px 34px;
+  border-radius:30px;
+  border:none;
+  font-weight:600;
+  cursor:pointer;
 }
-.hero.show h1,
-.hero.show p,
-.hero.show .actions{
-  opacity:1;
-  transform:none;
+.whatsapp{background:#25D366;color:#000}
+
+/* IMAGE STORY */
+.full-image{
+  height:80vh;
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px;
+}
+.full-image h2{
+  background:rgba(0,0,0,.6);
+  padding:20px 30px;
+  border-radius:12px;
 }
 
 /* SERVICES */
-.grid{
+.cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:40px;
 }
 .card{
   background:#111;
-  border-radius:22px;
-  padding:45px 30px;
-  text-align:center;
-  opacity:0;
-  transform:translateY(80px) scale(.9);
-  transition:1s ease;
+  padding:40px 30px;
+  border-radius:18px;
 }
-.card.show{
-  opacity:1;
-  transform:none;
-}
-.card h3{
-  font-family:'Bebas Neue',cursive;
-  font-size:30px;
-  color:#ff9800;
-  margin-bottom:12px;
-}
-
-/* AUDITORIUM */
-.auditorium{
-  height:85vh;
-  background:
-    linear-gradient(120deg,rgba(0,0,0,.85),rgba(0,0,0,.6)),
-    url("https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=1800&q=80");
-  background-size:120%;
-  background-position:center;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-}
-.auditorium h2{font-size:72px}
-.auditorium p{font-size:22px;max-width:800px}
 
 /* VIDEOS */
-.videos{background:#0b0b0b}
-.video-grid{
+.videos{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:40px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
   justify-items:center;
 }
-.phone-frame{
-  width:260px;
-  height:460px;
-  border-radius:26px;
+.video-frame{
+  width:230px;
+  height:410px;
+  border-radius:20px;
   overflow:hidden;
-  background:#000;
-  box-shadow:0 20px 50px rgba(0,0,0,.6);
-  opacity:0;
-  transform:scale(.7);
-  transition:1s ease;
 }
-.phone-frame.show{
-  opacity:1;
-  transform:scale(1);
-}
-.phone-frame iframe{
+.video-frame iframe{
   width:100%;
   height:100%;
   border:none;
 }
 
+/* TESTIMONIAL */
+.testimonial{
+  background:#111;
+  border-radius:18px;
+  padding:40px;
+  max-width:700px;
+  margin:40px auto 0;
+  font-style:italic;
+}
+
 /* CTA */
 .cta{
-  background:linear-gradient(135deg,#ff9800,#ff6f00);
+  background:#ff9800;
   color:#000;
-  text-align:center;
-  padding:100px 20px;
 }
-.cta h2{color:#000;margin-bottom:20px}
-.cta p{font-size:18px;margin-bottom:30px}
+.cta h2{margin-bottom:10px}
 .cta .btn{background:#000;color:#fff}
 
 /* FOOTER */
 footer{
-  background:#000;
-  text-align:center;
   padding:50px 20px;
-  opacity:0;
-  transform:translateY(40px);
-  transition:1s ease;
+  text-align:center;
+  background:#000;
+  font-size:15px;
 }
-footer.show{opacity:1;transform:none}
 </style>
 </head>
 
@@ -180,66 +142,101 @@ footer.show{opacity:1;transform:none}
 
 <!-- HERO -->
 <section class="hero">
-  <div>
-    <h1>STAGECRAFT</h1>
+  <div class="fade">
+    <h1>StageCraft</h1>
     <p>Stand-Up Comedy & Live Show Management</p>
-    <div class="actions">
-      <a href="tel:8861605754"><button class="btn call">CALL NOW</button></a>
-      <a href="https://wa.me/918861605754"><button class="btn wa">WHATSAPP</button></a>
+    <a href="https://wa.me/918861605754">
+      <button class="btn whatsapp">Contact on WhatsApp</button>
+    </a>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="section center fade">
+  <h2>We Manage Live Comedy Shows</h2>
+  <p>
+    StageCraft handles stand-up comedy shows end-to-end —
+    from planning and coordination to smooth on-ground execution.
+  </p>
+</section>
+
+<!-- AUDITORIUM VISUAL -->
+<section class="full-image" style="background-image:url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=1800&q=80')">
+  <h2>Auditoriums • Comedy Clubs • Live Stages</h2>
+</section>
+
+<!-- SERVICES -->
+<section class="section fade">
+  <h2 class="center">What We Do</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Artist Coordination</h3>
+      <p>Managing performers, schedules, show flow and requirements.</p>
+    </div>
+    <div class="card">
+      <h3>Venue Management</h3>
+      <p>Handling auditoriums, seating, stage setup and sound.</p>
+    </div>
+    <div class="card">
+      <h3>Show Execution</h3>
+      <p>End-to-end execution ensuring smooth live shows.</p>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section>
-  <h2>WHAT WE DO</h2>
-  <div class="grid">
-    <div class="card"><h3>ARTIST COORDINATION</h3><p>Managing comedians and show flow.</p></div>
-    <div class="card"><h3>VENUE MANAGEMENT</h3><p>Auditoriums, stage, seating & sound.</p></div>
-    <div class="card"><h3>SHOW EXECUTION</h3><p>End-to-end comedy show handling.</p></div>
-  </div>
-</section>
-
-<!-- AUDITORIUM -->
-<section class="auditorium">
-  <div>
-    <h2>LIVE AUDITORIUM COMEDY</h2>
-    <p>From comedy clubs to packed auditoriums — we manage it all.</p>
-  </div>
-</section>
-
 <!-- VIDEOS -->
-<section class="videos">
-  <h2>LIVE SHOW MOMENTS</h2>
-  <div class="video-grid">
-    <div class="phone-frame"><iframe src="https://www.youtube.com/embed/Mq90yeVR0yc" allowfullscreen></iframe></div>
-    <div class="phone-frame"><iframe src="https://www.youtube.com/embed/nWdUNiCN8xQ" allowfullscreen></iframe></div>
-    <div class="phone-frame"><iframe src="https://www.youtube.com/embed/PZ3qTkRZEmY" allowfullscreen></iframe></div>
+<section class="section center fade">
+  <h2>Live Show Moments</h2>
+  <div class="videos">
+    <div class="video-frame">
+      <iframe src="https://www.youtube.com/embed/Mq90yeVR0yc" allowfullscreen></iframe>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://www.youtube.com/embed/nWdUNiCN8xQ" allowfullscreen></iframe>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://www.youtube.com/embed/PZ3qTkRZEmY" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="section center fade">
+  <h2>Trusted Execution</h2>
+  <p>
+    We’ve managed multiple stand-up comedy shows across different venues,
+    working with a range of performers and production teams.
+  </p>
+
+  <div class="testimonial">
+    “Very smooth show execution, professional team.”
   </div>
 </section>
 
 <!-- CTA -->
-<section class="cta">
-  <h2>PLANNING A STAND-UP SHOW?</h2>
+<section class="section center cta fade">
+  <h2>Planning a Stand-Up Show?</h2>
   <p>Talk to StageCraft and get it executed professionally.</p>
-  <a href="https://wa.me/918861605754"><button class="btn">CONTACT US ON WHATSAPP</button></a>
+  <a href="https://wa.me/918861605754">
+    <button class="btn">Contact Us on WhatsApp</button>
+  </a>
 </section>
 
 <!-- FOOTER -->
-<footer>
+<footer class="fade">
   <p><b>StageCraft</b></p>
-  <p>📞 8861605754 · ✉️ rjarif45@gmail.com</p>
+  <p>📞 8861605754 | ✉️ rjarif45@gmail.com</p>
   <p>India</p>
 </footer>
 
 <script>
-window.onload=()=>document.querySelector(".hero").classList.add("show");
-
 const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")})
+  entries.forEach(e=>{
+    if(e.isIntersecting)e.target.classList.add("show");
+  });
 },{threshold:.2});
 
-document.querySelectorAll(".card,.phone-frame,footer").forEach(el=>obs.observe(el));
+document.querySelectorAll(".fade").forEach(el=>obs.observe(el));
 </script>
 
 </body>
