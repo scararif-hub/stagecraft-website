@@ -9,23 +9,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
+*{margin:0;padding:0;box-sizing:border-box}
 body{
   background:#050505;
-  color:#ffffff;
-  font-family:'Inter', sans-serif;
+  color:#fff;
+  font-family:'Inter',sans-serif;
+  overflow-x:hidden;
 }
 
 /* HERO */
 .hero{
   height:100vh;
   background:
-    linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.9)),
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.9)),
     url("https://images.unsplash.com/photo-1518972559570-7cc1309f3229?auto=format&fit=crop&w=1600&q=80");
   background-size:cover;
   background-position:center;
@@ -33,29 +29,26 @@ body{
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding:20px;
 }
 
-.hero-content h1{
-  font-family:'Bebas Neue', cursive;
+.hero h1{
+  font-family:'Bebas Neue',cursive;
   font-size:96px;
   letter-spacing:6px;
-  animation:heroPop 1.2s ease forwards;
+  animation:popIn 1.2s ease forwards;
 }
 
-.hero-content p{
+.hero p{
   font-size:20px;
   margin-top:12px;
   opacity:0;
-  animation:fadeUp 1s ease forwards;
-  animation-delay:.6s;
+  animation:fadeUp 1s ease .6s forwards;
 }
 
-.hero-buttons{
+.actions{
   margin-top:30px;
   opacity:0;
-  animation:fadeUp 1s ease forwards;
-  animation-delay:1s;
+  animation:fadeUp 1s ease 1s forwards;
 }
 
 .btn{
@@ -67,456 +60,169 @@ body{
   cursor:pointer;
   transition:.3s;
 }
+.call{background:#ff9800;color:#000}
+.wa{background:#25D366;color:#000}
+.btn:hover{transform:scale(1.1)}
 
-.call{background:#ff9800;color:#000;}
-.wa{background:#25D366;color:#000;}
-
-.btn:hover{
-  transform:scale(1.08);
-}
-
-/* Animations */
-@keyframes heroPop{
-  0%{transform:scale(.3);opacity:0;}
-  70%{transform:scale(1.1);}
-  100%{transform:scale(1);opacity:1;}
-}
-
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(40px);}
-  to{opacity:1;transform:translateY(0);}
-}
-</style>
-</head>
-
-<body>
-
-<section class="hero">
-  <div class="hero-content">
-    <h1>STAGECRAFT</h1>
-    <p>Crafting Comedy · Executing Live Shows</p>
-
-    <div class="hero-buttons">
-      <a href="tel:8861605754"><button class="btn call">CALL NOW</button></a>
-      <a href="https://wa.me/918861605754"><button class="btn wa">WHATSAPP</button></a>
-    </div>
-  </div>
-</section>
-
-</body>
-  <style>
-/* SERVICES SECTION */
-.services{
+/* SERVICES */
+section{
   padding:100px 20px;
   max-width:1200px;
   margin:auto;
 }
 
-.services h2{
-  font-family:'Bebas Neue', cursive;
+h2{
+  font-family:'Bebas Neue',cursive;
   font-size:56px;
-  text-align:center;
   letter-spacing:4px;
+  text-align:center;
   margin-bottom:60px;
 }
 
-.services-grid{
+.grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:40px;
 }
 
-.service-card{
+.card{
   background:#111;
   border-radius:22px;
   padding:40px 30px;
   text-align:center;
-  transform:translateY(80px) scale(.85);
+  transform:translateY(80px) scale(.9);
   opacity:0;
   transition:1s ease;
 }
 
-.service-card.show{
+.card.show{
   transform:translateY(0) scale(1);
   opacity:1;
 }
 
-.service-card h3{
-  font-family:'Bebas Neue', cursive;
+.card h3{
+  font-family:'Bebas Neue',cursive;
   font-size:30px;
   letter-spacing:2px;
   margin-bottom:15px;
   color:#ff9800;
 }
 
-.service-card p{
-  font-size:16px;
-  opacity:.85;
-}
-</style>
-
-<section class="services">
-  <h2>WHAT WE DO</h2>
-
-  <div class="services-grid">
-    <div class="service-card">
-      <h3>ARTIST COORDINATION</h3>
-      <p>Managing comedians, schedules and show flow.</p>
-    </div>
-
-    <div class="service-card">
-      <h3>VENUE MANAGEMENT</h3>
-      <p>Auditoriums, seating, stage setup and sound systems.</p>
-    </div>
-
-    <div class="service-card">
-      <h3>SHOW EXECUTION</h3>
-      <p>End-to-end execution of live stand-up comedy shows.</p>
-    </div>
-  </div>
-</section>
-
-<script>
-const serviceCards = document.querySelectorAll(".service-card");
-
-const serviceObserver = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
-    }
-  });
-},{threshold:0.2});
-
-serviceCards.forEach(card=>serviceObserver.observe(card));
-</script>
-  <style>
-/* AUDITORIUM SECTION */
+/* AUDITORIUM */
 .auditorium{
-  position:relative;
-  margin:120px 0;
-  height:80vh;
-  background:
-    linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.9)),
-    url("https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=1600&q=80");
-  background-size:cover;
-  background-position:center;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  overflow:hidden;
-}
-
-.auditorium-content{
-  max-width:800px;
-  padding:20px;
-  transform:scale(.8);
-  opacity:0;
-  transition:1.2s ease;
-}
-
-.auditorium.show .auditorium-content{
-  transform:scale(1);
-  opacity:1;
-}
-
-.auditorium h2{
-  font-family:'Bebas Neue', cursive;
-  font-size:72px;
-  letter-spacing:5px;
-  margin-bottom:20px;
-}
-
-.auditorium p{
-  font-size:20px;
-  opacity:.9;
-}
-</style>
-
-<section class="auditorium">
-  <div class="auditorium-content">
-    <h2>LIVE AUDITORIUM SHOWS</h2>
-    <p>From intimate comedy clubs to large auditoriums — we manage it all.</p>
-  </div>
-</section>
-
-<script>
-const auditorium=document.querySelector(".auditorium");
-
-const auditoriumObserver=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
-    }
-  });
-},{threshold:.3});
-
-auditoriumObserver.observe(auditorium);
-</script>
-  <style>
-/* CRAZY AUDITORIUM SECTION */
-.auditorium{
-  position:relative;
   height:90vh;
   background:
-    linear-gradient(120deg, rgba(0,0,0,.9), rgba(0,0,0,.6)),
+    linear-gradient(120deg,rgba(0,0,0,.9),rgba(0,0,0,.6)),
     url("https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=1800&q=80");
   background-size:120%;
   background-position:center;
   display:flex;
   align-items:center;
   justify-content:center;
-  overflow:hidden;
-  transition:background-position 6s ease;
-}
-
-.auditorium.show{
-  background-position:top;
-}
-
-.auditorium::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:radial-gradient(circle at center, rgba(255,152,0,.25), transparent 60%);
-  animation:pulseGlow 3s infinite;
-}
-
-.auditorium-content{
-  position:relative;
-  z-index:2;
   text-align:center;
-  max-width:900px;
 }
 
 .auditorium h2{
-  font-family:'Bebas Neue', cursive;
-  font-size:82px;
-  letter-spacing:6px;
-  margin-bottom:20px;
-  transform:translateX(-120px);
-  opacity:0;
-  transition:1.2s ease;
+  font-size:72px;
 }
 
 .auditorium p{
   font-size:22px;
-  transform:translateX(120px);
+}
+
+/* TRUST */
+.trust .card h3{
+  font-size:36px;
+}
+
+/* FOOTER */
+footer{
+  background:#000;
+  text-align:center;
+  padding:50px 20px;
   opacity:0;
-  transition:1.2s ease .3s;
+  transform:translateY(40px);
+  transition:1s;
 }
 
-.auditorium.show h2,
-.auditorium.show p{
-  transform:translateX(0);
+footer.show{
   opacity:1;
+  transform:translateY(0);
 }
 
-@keyframes pulseGlow{
-  0%{opacity:.2}
-  50%{opacity:.5}
-  100%{opacity:.2}
+/* ANIMATIONS */
+@keyframes popIn{
+  0%{transform:scale(.3);opacity:0}
+  70%{transform:scale(1.1)}
+  100%{transform:scale(1);opacity:1}
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(40px)}
+  to{opacity:1;transform:translateY(0)}
 }
 </style>
+</head>
 
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>STAGECRAFT</h1>
+    <p>Crafting Comedy · Executing Live Shows</p>
+    <div class="actions">
+      <a href="tel:8861605754"><button class="btn call">CALL NOW</button></a>
+      <a href="https://wa.me/918861605754"><button class="btn wa">WHATSAPP</button></a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section>
+  <h2>WHAT WE DO</h2>
+  <div class="grid">
+    <div class="card"><h3>ARTIST COORDINATION</h3><p>Managing comedians & schedules.</p></div>
+    <div class="card"><h3>VENUE MANAGEMENT</h3><p>Auditoriums, stage & sound.</p></div>
+    <div class="card"><h3>SHOW EXECUTION</h3><p>End-to-end live show handling.</p></div>
+  </div>
+</section>
+
+<!-- AUDITORIUM -->
 <section class="auditorium">
-  <div class="auditorium-content">
+  <div>
     <h2>LIVE AUDITORIUM COMEDY</h2>
-    <p>High-energy stand-up shows in clubs, theatres & large auditoriums.</p>
+    <p>High-energy stand-up shows across venues.</p>
   </div>
 </section>
 
-<script>
-const auditorium=document.querySelector(".auditorium");
-
-const obsAuditorium=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
-    }
-  });
-},{threshold:.35});
-
-obsAuditorium.observe(auditorium);
-</script>
-  <style>
-/* TRUST SECTION */
-.trust{
-  padding:120px 20px;
-  max-width:1200px;
-  margin:auto;
-}
-
-.trust h2{
-  font-family:'Bebas Neue', cursive;
-  font-size:60px;
-  letter-spacing:5px;
-  text-align:center;
-  margin-bottom:70px;
-}
-
-.trust-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:40px;
-}
-
-.trust-card{
-  background:linear-gradient(160deg,#111,#1a1a1a);
-  border-radius:22px;
-  padding:50px 30px;
-  text-align:center;
-  transform:translateY(80px) scale(.9);
-  opacity:0;
-  transition:1s ease;
-}
-
-.trust-card.show{
-  transform:translateY(0) scale(1);
-  opacity:1;
-}
-
-.trust-card h3{
-  font-family:'Bebas Neue', cursive;
-  font-size:36px;
-  letter-spacing:2px;
-  margin-bottom:10px;
-  color:#ff9800;
-}
-
-.trust-card p{
-  font-size:16px;
-  opacity:.85;
-}
-</style>
-
+<!-- TRUST -->
 <section class="trust">
   <h2>WHY STAGECRAFT</h2>
-
-  <div class="trust-grid">
-    <div class="trust-card">
-      <h3>50+ SHOWS</h3>
-      <p>Successfully managed stand-up shows across multiple cities.</p>
-    </div>
-
-    <div class="trust-card">
-      <h3>PRO COMEDIANS</h3>
-      <p>Worked with established and emerging stand-up artists.</p>
-    </div>
-
-    <div class="trust-card">
-      <h3>END-TO-END</h3>
-      <p>From planning to performance — everything handled professionally.</p>
-    </div>
-
-    <div class="trust-card">
-      <h3>FAST COORDINATION</h3>
-      <p>Quick bookings and smooth communication via WhatsApp.</p>
-    </div>
+  <div class="grid">
+    <div class="card"><h3>50+ SHOWS</h3><p>Across multiple cities.</p></div>
+    <div class="card"><h3>PRO COMEDIANS</h3><p>Established & emerging artists.</p></div>
+    <div class="card"><h3>END-TO-END</h3><p>Planning to performance.</p></div>
+    <div class="card"><h3>FAST COORDINATION</h3><p>Quick WhatsApp bookings.</p></div>
   </div>
 </section>
 
-<script>
-const trustCards=document.querySelectorAll(".trust-card");
+<!-- FOOTER -->
+<footer>
+  <p><b>Bookings & Enquiries</b></p>
+  <p>📞 8861605754</p>
+  <p>✉️ rjarif45@gmail.com</p>
+  <p>India</p>
+</footer>
 
-const trustObserver=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
-    }
+<script>
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add("show")}
   });
 },{threshold:.2});
 
-trustCards.forEach(card=>trustObserver.observe(card));
+document.querySelectorAll(".card, footer").forEach(el=>observer.observe(el));
 </script>
-  <style>
-/* TRUST SECTION */
-.trust{
-  padding:120px 20px;
-  max-width:1200px;
-  margin:auto;
-}
 
-.trust h2{
-  font-family:'Bebas Neue', cursive;
-  font-size:60px;
-  letter-spacing:5px;
-  text-align:center;
-  margin-bottom:70px;
-}
-
-.trust-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:40px;
-}
-
-.trust-card{
-  background:linear-gradient(160deg,#111,#1a1a1a);
-  border-radius:22px;
-  padding:50px 30px;
-  text-align:center;
-  transform:translateY(80px) scale(.9);
-  opacity:0;
-  transition:1s ease;
-}
-
-.trust-card.show{
-  transform:translateY(0) scale(1);
-  opacity:1;
-}
-
-.trust-card h3{
-  font-family:'Bebas Neue', cursive;
-  font-size:36px;
-  letter-spacing:2px;
-  margin-bottom:10px;
-  color:#ff9800;
-}
-
-.trust-card p{
-  font-size:16px;
-  opacity:.85;
-}
-</style>
-
-<section class="trust">
-  <h2>WHY STAGECRAFT</h2>
-
-  <div class="trust-grid">
-    <div class="trust-card">
-      <h3>50+ SHOWS</h3>
-      <p>Successfully managed stand-up shows across multiple cities.</p>
-    </div>
-
-    <div class="trust-card">
-      <h3>PRO COMEDIANS</h3>
-      <p>Worked with established and emerging stand-up artists.</p>
-    </div>
-
-    <div class="trust-card">
-      <h3>END-TO-END</h3>
-      <p>From planning to performance — everything handled professionally.</p>
-    </div>
-
-    <div class="trust-card">
-      <h3>FAST COORDINATION</h3>
-      <p>Quick bookings and smooth communication via WhatsApp.</p>
-    </div>
-  </div>
-</section>
-
-<script>
-const trustCards=document.querySelectorAll(".trust-card");
-
-const trustObserver=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
-    }
-  });
-},{threshold:.2});
-
-trustCards.forEach(card=>trustObserver.observe(card));
-</script>
+</body>
 </html>
