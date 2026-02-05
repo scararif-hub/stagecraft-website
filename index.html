@@ -3,31 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StageCraft | Stand-Up Show Management</title>
+<title>StageCraft | Stand-Up Comedy & Live Show Management</title>
 
-<!-- Modern Font -->
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+
 body{
   font-family:'Sora',sans-serif;
   background:#0b0b0f;
-  color:#ffffff;
+  color:#fff;
   line-height:1.7;
 }
 
 /* COMMON */
 .section{
-  padding:120px 22px;
+  padding:100px 20px;
   max-width:1100px;
   margin:auto;
 }
 .center{text-align:center}
-h1,h2{font-weight:700}
-h1{font-size:56px;letter-spacing:-1px}
-h2{font-size:42px;margin-bottom:20px}
-p{font-size:18px;opacity:.9}
+
+h1{font-size:56px;font-weight:700}
+h2{font-size:42px;margin-bottom:20px;font-weight:600}
 
 .fade{
   opacity:0;
@@ -43,8 +42,8 @@ p{font-size:18px;opacity:.9}
 .hero{
   min-height:100vh;
   background:
-    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.9)),
-    url("https://images.unsplash.com/photo-1518972559570-7cc1309f3229?auto=format&fit=crop&w=1600&q=80");
+  linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.9)),
+  url("https://images.unsplash.com/photo-1518972559570-7cc1309f3229?auto=format&fit=crop&w=1600&q=80");
   background-size:cover;
   background-position:center;
   display:flex;
@@ -52,63 +51,37 @@ p{font-size:18px;opacity:.9}
   justify-content:center;
   text-align:center;
 }
-.hero h1{
-  margin-bottom:14px;
-  color:#ffffff;
-}
-.hero p{
-  max-width:600px;
-  margin:auto;
-  color:#cfcfff;
-}
 
-/* BUTTONS */
 .btn{
-  margin-top:32px;
-  padding:14px 36px;
-  border-radius:32px;
+  padding:14px 34px;
   border:none;
+  border-radius:30px;
   font-weight:600;
   cursor:pointer;
-  font-size:15px;
-}
-.primary{
-  background:#6C5CE7;
-  color:#fff;
-}
-.whatsapp{
-  background:#25D366;
-  color:#000;
-  margin-left:12px;
+  margin-top:20px;
 }
 
-/* IMAGE STORY */
-.full-image{
-  height:80vh;
-  background-size:cover;
-  background-position:center;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:20px;
-}
-.full-image h2{
-  background:rgba(0,0,0,.6);
-  padding:20px 34px;
-  border-radius:14px;
-}
+.primary{background:#6C5CE7;color:#fff}
+.whatsapp{background:#25D366;color:#000}
 
-/* SERVICES */
+/* CARDS */
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:40px;
+  gap:30px;
 }
+
 .card{
-  background:#13131a;
-  padding:40px 30px;
-  border-radius:20px;
+  background:#14141c;
+  padding:30px;
+  border-radius:16px;
+  text-align:center;
+}
+
+.card img{
+  width:100%;
+  border-radius:12px;
+  margin-bottom:15px;
 }
 
 /* VIDEOS */
@@ -118,46 +91,38 @@ p{font-size:18px;opacity:.9}
   gap:30px;
   justify-items:center;
 }
+
 .video-frame{
   width:230px;
   height:410px;
-  border-radius:22px;
+  border-radius:20px;
   overflow:hidden;
 }
+
 .video-frame iframe{
   width:100%;
   height:100%;
   border:none;
 }
 
-/* TESTIMONIAL */
-.testimonial{
-  background:#13131a;
-  border-radius:18px;
-  padding:40px;
-  max-width:700px;
-  margin:40px auto 0;
-  font-style:italic;
-  color:#cfcfff;
-}
-
 /* CTA */
 .cta{
   background:#6C5CE7;
-  color:#fff;
+  text-align:center;
+  padding:80px 20px;
 }
-.cta .btn{
+
+.cta button{
   background:#000;
   color:#fff;
 }
 
 /* FOOTER */
 footer{
-  padding:50px 20px;
   text-align:center;
-  background:#0b0b0f;
+  padding:40px 20px;
+  background:#000;
   font-size:15px;
-  color:#cfcfff;
 }
 </style>
 </head>
@@ -166,91 +131,102 @@ footer{
 
 <!-- HERO -->
 <section class="hero">
-  <div class="fade">
-    <h1>StageCraft</h1>
-    <p>Stand-Up Comedy & Live Show Management</p>
-    <a href="https://wa.me/918861605754">
-      <button class="btn primary">Contact on WhatsApp</button>
-    </a>
-  </div>
+<div class="fade">
+<h1>StageCraft</h1>
+<p>Stand-Up Comedy & Live Show Management</p>
+
+<a href="https://wa.me/918861605754">
+<button class="btn whatsapp">WhatsApp Us</button>
+</a>
+</div>
 </section>
 
-<!-- STORY -->
+<!-- ABOUT -->
 <section class="section center fade">
-  <h2>We Manage Live Comedy Shows</h2>
-  <p>
-    StageCraft handles stand-up comedy shows end-to-end —
-    from planning and coordination to smooth on-ground execution.
-  </p>
+<h2>We Manage Live Comedy Shows</h2>
+<p>
+From planning to execution, StageCraft handles artists,
+venues, stage setup and complete show flow professionally.
+</p>
 </section>
 
-<!-- AUDITORIUM -->
-<section class="full-image" style="background-image:url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=1800&q=80')">
-  <h2>Auditoriums • Comedy Clubs • Live Stages</h2>
-</section>
-
-<!-- SERVICES -->
+<!-- VENUE TYPES -->
 <section class="section fade">
-  <h2 class="center">What We Do</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>Artist Coordination</h3>
-      <p>Managing performers, schedules and show flow.</p>
-    </div>
-    <div class="card">
-      <h3>Venue Management</h3>
-      <p>Handling auditoriums, seating, stage setup and sound.</p>
-    </div>
-    <div class="card">
-      <h3>Show Execution</h3>
-      <p>End-to-end execution ensuring smooth live shows.</p>
-    </div>
-  </div>
+<h2 class="center">Where We Execute Shows</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=900&q=80">
+<h3>Auditoriums</h3>
+<p>Large comedy shows in professional auditoriums.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1497032205916-ac775f0649ae?auto=format&fit=crop&w=900&q=80">
+<h3>Comedy Clubs</h3>
+<p>Intimate stand-up comedy environments.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=900&q=80">
+<h3>Live Stages</h3>
+<p>Festivals, public events and large live performances.</p>
+</div>
+
+</div>
 </section>
 
 <!-- VIDEOS -->
 <section class="section center fade">
-  <h2>Live Show Moments</h2>
-  <div class="videos">
-    <div class="video-frame"><iframe src="https://www.youtube.com/embed/Mq90yeVR0yc" allowfullscreen></iframe></div>
-    <div class="video-frame"><iframe src="https://www.youtube.com/embed/nWdUNiCN8xQ" allowfullscreen></iframe></div>
-    <div class="video-frame"><iframe src="https://www.youtube.com/embed/PZ3qTkRZEmY" allowfullscreen></iframe></div>
-  </div>
+<h2>Live Show Moments</h2>
+
+<div class="videos">
+
+<div class="video-frame">
+<iframe src="https://www.youtube.com/embed/Mq90yeVR0yc" allowfullscreen></iframe>
+</div>
+
+<div class="video-frame">
+<iframe src="https://www.youtube.com/embed/nWdUNiCN8xQ" allowfullscreen></iframe>
+</div>
+
+<div class="video-frame">
+<iframe src="https://www.youtube.com/embed/PZ3qTkRZEmY" allowfullscreen></iframe>
+</div>
+
+</div>
 </section>
 
 <!-- TRUST -->
 <section class="section center fade">
-  <h2>Trusted Execution</h2>
-  <p>
-    We’ve managed multiple stand-up comedy shows across different venues,
-    working with a range of performers and production teams.
-  </p>
-  <div class="testimonial">
-    “Very smooth show execution, professional team.”
-  </div>
+<h2>Trusted Execution</h2>
+<p>Very smooth show execution, professional team.</p>
 </section>
 
 <!-- CTA -->
-<section class="section center cta fade">
-  <h2>Planning a Stand-Up Show?</h2>
-  <p>Talk to StageCraft and get it executed professionally.</p>
-  <a href="https://wa.me/918861605754">
-    <button class="btn">Contact Us on WhatsApp</button>
-  </a>
+<section class="cta fade">
+<h2>Planning a Stand-Up Show?</h2>
+<p>Let StageCraft manage it professionally.</p>
+
+<a href="https://wa.me/918861605754">
+<button class="btn">Contact Us</button>
+</a>
 </section>
 
 <!-- FOOTER -->
 <footer class="fade">
-  <p><b>StageCraft</b></p>
-  <p>📞 8861605754 | ✉️ rjarif45@gmail.com</p>
-  <p>India</p>
+<p><b>StageCraft</b></p>
+<p>📞 8861605754</p>
+<p>✉️ rjarif45@gmail.com</p>
+<p>India</p>
 </footer>
 
 <script>
 const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting)e.target.classList.add("show");
-  });
+entries.forEach(e=>{
+if(e.isIntersecting) e.target.classList.add("show");
+});
 },{threshold:.2});
 
 document.querySelectorAll(".fade").forEach(el=>obs.observe(el));
