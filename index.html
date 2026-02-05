@@ -61,7 +61,6 @@ h2{font-size:42px;margin-bottom:20px;font-weight:600}
   margin-top:20px;
 }
 
-.primary{background:#6C5CE7;color:#fff}
 .whatsapp{background:#25D366;color:#000}
 
 /* CARDS */
@@ -78,7 +77,6 @@ h2{font-size:42px;margin-bottom:20px;font-weight:600}
   text-align:center;
 }
 
-/* IMAGE FIX (IMPORTANT PART) */
 .card img{
   width:100%;
   height:220px;
@@ -91,4 +89,149 @@ h2{font-size:42px;margin-bottom:20px;font-weight:600}
 .videos{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap
+  gap:30px;
+  justify-items:center;
+}
+
+.video-frame{
+  width:230px;
+  height:410px;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.video-frame iframe{
+  width:100%;
+  height:100%;
+  border:none;
+}
+
+/* CTA */
+.cta{
+  background:#6C5CE7;
+  text-align:center;
+  padding:80px 20px;
+}
+
+.cta button{
+  background:#000;
+  color:#fff;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px 20px;
+  background:#000;
+  font-size:15px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+<div class="fade">
+<h1>StageCraft</h1>
+<p>Stand-Up Comedy & Live Show Management</p>
+
+<a href="https://wa.me/918861605754">
+<button class="btn whatsapp">WhatsApp Us</button>
+</a>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="section center fade">
+<h2>We Manage Live Comedy Shows</h2>
+<p>
+From planning to execution, StageCraft handles artists,
+venues, stage setup and complete show flow professionally.
+</p>
+</section>
+
+<!-- VENUE TYPES -->
+<section class="section fade">
+<h2 class="center">Where We Execute Shows</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Auditorium_stage.jpg">
+<h3>Auditoriums</h3>
+<p>Large comedy shows in professional auditoriums.</p>
+</div>
+
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Stand-up_comedy_stage.jpg">
+<h3>Comedy Clubs</h3>
+<p>Intimate stand-up comedy environments.</p>
+</div>
+
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Concert_live_stage.jpg">
+<h3>Live Stages</h3>
+<p>Festivals, public events and large live performances.</p>
+</div>
+
+</div>
+</section>
+
+<!-- VIDEOS -->
+<section class="section center fade">
+<h2>Live Show Moments</h2>
+
+<div class="videos">
+
+<div class="video-frame">
+<iframe src="https://www.youtube.com/embed/Mq90yeVR0yc" allowfullscreen></iframe>
+</div>
+
+<div class="video-frame">
+<iframe src="https://www.youtube.com/embed/nWdUNiCN8xQ" allowfullscreen></iframe>
+</div>
+
+<div class="video-frame">
+<iframe src="https://www.youtube.com/embed/PZ3qTkRZEmY" allowfullscreen></iframe>
+</div>
+
+</div>
+</section>
+
+<!-- TRUST -->
+<section class="section center fade">
+<h2>Trusted Execution</h2>
+<p>Very smooth show execution, professional team.</p>
+</section>
+
+<!-- CTA -->
+<section class="cta fade">
+<h2>Planning a Stand-Up Show?</h2>
+<p>Let StageCraft manage it professionally.</p>
+
+<a href="https://wa.me/918861605754">
+<button class="btn">Contact Us</button>
+</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="fade">
+<p><b>StageCraft</b></p>
+<p>📞 8861605754</p>
+<p>✉️ rjarif45@gmail.com</p>
+<p>India</p>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting) e.target.classList.add("show");
+});
+},{threshold:.2});
+
+document.querySelectorAll(".fade").forEach(el=>obs.observe(el));
+</script>
+
+</body>
+</html>
