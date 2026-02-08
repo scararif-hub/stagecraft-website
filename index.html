@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>StageCraft | Stand-Up Comedy & Live Show Management</title>
 
-<!-- NEW FONT -->
+<!-- FONTS -->
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
@@ -13,48 +13,40 @@
 
 body{
   font-family:'Sora',sans-serif;
-  background:#0b0b0f;
-  color:#fff;
+  background:#0a0a0a;
+  color:#eee;
   line-height:1.7;
 }
 
-/* COMMON */
-.section{
-  padding:100px 20px;
-  max-width:1100px;
-  margin:auto;
-}
-.center{text-align:center}
-
+/* HEADINGS */
 h1{
   font-family:'Bebas Neue',sans-serif;
   font-size:72px;
   letter-spacing:3px;
-  font-weight:400;
+  color:#d4af37;
 }
 
 h2{
   font-family:'Bebas Neue',sans-serif;
   font-size:40px;
   letter-spacing:1px;
+  color:#d4af37;
   margin-bottom:20px;
 }
 
-.fade{
-  opacity:0;
-  transform:translateY(40px);
-  transition:1s ease;
+.section{
+  padding:100px 20px;
+  max-width:1100px;
+  margin:auto;
 }
-.fade.show{
-  opacity:1;
-  transform:none;
-}
+
+.center{text-align:center}
 
 /* HERO */
 .hero{
   min-height:100vh;
   background:
-  linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.9)),
+  linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.95)),
   url("https://images.unsplash.com/photo-1518972559570-7cc1309f3229?auto=format&fit=crop&w=1600&q=80");
   background-size:cover;
   background-position:center;
@@ -64,16 +56,17 @@ h2{
   text-align:center;
 }
 
+/* BUTTONS */
 .btn{
-  padding:14px 34px;
+  padding:14px 36px;
   border:none;
   border-radius:30px;
   font-weight:600;
   cursor:pointer;
   margin-top:20px;
+  background:#d4af37;
+  color:#000;
 }
-
-.whatsapp{background:#25D366;color:#000}
 
 /* CARDS */
 .cards{
@@ -83,10 +76,11 @@ h2{
 }
 
 .card{
-  background:#14141c;
+  background:#141414;
   padding:30px;
   border-radius:16px;
   text-align:center;
+  border:1px solid #d4af3720;
 }
 
 .card img{
@@ -120,14 +114,9 @@ h2{
 
 /* CTA */
 .cta{
-  background:#6C5CE7;
+  background:#111;
   text-align:center;
   padding:80px 20px;
-}
-
-.cta button{
-  background:#000;
-  color:#fff;
 }
 
 /* FOOTER */
@@ -136,6 +125,18 @@ footer{
   padding:40px 20px;
   background:#000;
   font-size:15px;
+  color:#bbb;
+}
+
+/* FADE ANIMATION */
+.fade{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s ease;
+}
+.fade.show{
+  opacity:1;
+  transform:none;
 }
 </style>
 </head>
@@ -149,7 +150,7 @@ footer{
 <p>Stand-Up Comedy & Live Show Management</p>
 
 <a href="https://wa.me/918861605754">
-<button class="btn whatsapp">WhatsApp Us</button>
+<button class="btn">WhatsApp Us</button>
 </a>
 </div>
 </section>
@@ -163,7 +164,7 @@ venues, stage setup and complete show flow professionally.
 </p>
 </section>
 
-<!-- VENUE TYPES -->
+<!-- VENUES -->
 <section class="section fade">
 <h2 class="center">Where We Execute Shows</h2>
 
