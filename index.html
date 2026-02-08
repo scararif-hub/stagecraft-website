@@ -3,103 +3,107 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StageCraft | Live Show Management</title>
+<title>StageCraft | Stand-Up Comedy & Live Show Management</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 
 body{
-  font-family:'Poppins',sans-serif;
-  background:#0c0c0f;
+  font-family:'Sora',sans-serif;
+  background:#0b0b0f;
   color:#fff;
+  line-height:1.7;
 }
 
-/* HERO */
-.hero{
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  background:
-  linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.9)),
-  url("https://images.unsplash.com/photo-1521335629791-ce4aec67dd53?q=80&w=1600&auto=format&fit=crop");
-  background-size:cover;
-}
-
-.hero h1{
-  font-size:70px;
-  letter-spacing:2px;
-}
-
-.hero p{
-  margin:15px 0 30px;
-  font-size:20px;
-  opacity:.85;
-}
-
-.btn{
-  padding:14px 34px;
-  border-radius:30px;
-  border:none;
-  cursor:pointer;
-  font-weight:600;
-}
-
-.whatsapp{
-  background:#25D366;
-  color:#000;
-}
-
-/* SECTION */
-section{
+/* COMMON */
+.section{
   padding:100px 20px;
   max-width:1100px;
   margin:auto;
 }
+.center{text-align:center}
 
-h2{
-  text-align:center;
-  font-size:40px;
-  margin-bottom:40px;
+h1{font-size:56px;font-weight:700}
+h2{font-size:42px;margin-bottom:20px;font-weight:600}
+
+.fade{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s ease;
+}
+.fade.show{
+  opacity:1;
+  transform:none;
 }
 
-/* VENUES */
-.grid{
+/* HERO */
+.hero{
+  min-height:100vh;
+  background:
+  linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.9)),
+  url("https://images.unsplash.com/photo-1518972559570-7cc1309f3229?auto=format&fit=crop&w=1600&q=80");
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.btn{
+  padding:14px 34px;
+  border:none;
+  border-radius:30px;
+  font-weight:600;
+  cursor:pointer;
+  margin-top:20px;
+}
+
+.whatsapp{background:#25D366;color:#000}
+
+/* CARDS */
+.cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:30px;
 }
 
 .card{
-  background:#15151d;
+  background:#14141c;
   padding:30px;
-  border-radius:18px;
+  border-radius:16px;
   text-align:center;
 }
 
 .card img{
   width:100%;
-  height:200px;
+  height:230px;
   object-fit:cover;
   border-radius:12px;
   margin-bottom:15px;
 }
 
 /* VIDEOS */
-.video{
+.videos{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:30px;
   justify-items:center;
 }
 
-.video iframe{
+.video-frame{
   width:230px;
   height:410px;
   border-radius:20px;
+  overflow:hidden;
+}
+
+.video-frame iframe{
+  width:100%;
+  height:100%;
+  border:none;
 }
 
 /* CTA */
@@ -119,7 +123,7 @@ footer{
   text-align:center;
   padding:40px 20px;
   background:#000;
-  font-size:14px;
+  font-size:15px;
 }
 </style>
 </head>
@@ -127,79 +131,107 @@ footer{
 <body>
 
 <!-- HERO -->
-<div class="hero">
-  <div>
-    <h1>StageCraft</h1>
-    <p>Stand-Up Comedy & Live Show Management</p>
-    <a href="https://wa.me/918861605754">
-      <button class="btn whatsapp">WhatsApp Us</button>
-    </a>
-  </div>
+<section class="hero">
+<div class="fade">
+<h1>StageCraft</h1>
+<p>Stand-Up Comedy & Live Show Management</p>
+
+<a href="https://wa.me/918861605754">
+<button class="btn whatsapp">WhatsApp Us</button>
+</a>
 </div>
+</section>
 
 <!-- ABOUT -->
-<section>
-<h2>What We Do</h2>
-<p style="text-align:center;max-width:700px;margin:auto;">
-StageCraft manages live shows from planning to execution —
-artists, venues, stage setup and smooth event flow.
+<section class="section center fade">
+<h2>We Manage Live Comedy Shows</h2>
+<p>
+From planning to execution, StageCraft handles artists,
+venues, stage setup and complete show flow professionally.
 </p>
 </section>
 
-<!-- VENUES -->
-<section>
-<h2>Venue Types</h2>
+<!-- VENUE TYPES -->
+<section class="section fade">
+<h2 class="center">Where We Execute Shows</h2>
 
-<div class="grid">
+<div class="cards">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?q=80&w=800&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=1000&q=80">
 <h3>Auditoriums</h3>
-<p>Professional indoor venues for structured live shows.</p>
+<p>Large comedy shows in professional auditoriums.</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&w=800&q=80">
-<h3>Clubs & Indoor Venues</h3>
-<p>Small indoor venues and intimate performance spaces.</p>
+<img src="https://images.unsplash.com/photo-1527224857830-43a7acc85260?auto=format&fit=crop&w=1000&q=80">
+<h3>Comedy Clubs</h3>
+<p>Intimate stand-up comedy environments.</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=1000&q=80">
 <h3>Live Stages</h3>
-<p>Public shows, festivals and large stage events.</p>
+<p>Festivals, public events and large live performances.</p>
 </div>
 
 </div>
 </section>
 
 <!-- VIDEOS -->
-<section>
+<section class="section center fade">
 <h2>Live Show Moments</h2>
 
-<div class="video">
-<iframe src="https://www.youtube.com/embed/Mq90yeVR0yc"></iframe>
-<iframe src="https://www.youtube.com/embed/nWdUNiCN8xQ"></iframe>
-<iframe src="https://www.youtube.com/embed/PZ3qTkRZEmY"></iframe>
+<div class="videos">
+
+<div class="video-frame">
+<iframe src="https://www.youtube.com/embed/Mq90yeVR0yc" allowfullscreen></iframe>
+</div>
+
+<div class="video-frame">
+<iframe src="https://www.youtube.com/embed/nWdUNiCN8xQ" allowfullscreen></iframe>
+</div>
+
+<div class="video-frame">
+<iframe src="https://www.youtube.com/embed/PZ3qTkRZEmY" allowfullscreen></iframe>
+</div>
+
 </div>
 </section>
 
+<!-- TRUST -->
+<section class="section center fade">
+<h2>Trusted Execution</h2>
+<p>Very smooth show execution, professional team.</p>
+</section>
+
 <!-- CTA -->
-<div class="cta">
-<h2>Planning a Show?</h2>
-<p>Let StageCraft handle it professionally.</p>
+<section class="cta fade">
+<h2>Planning a Stand-Up Show?</h2>
+<p>Let StageCraft manage it professionally.</p>
+
 <a href="https://wa.me/918861605754">
 <button class="btn">Contact Us</button>
 </a>
-</div>
+</section>
 
 <!-- FOOTER -->
-<footer>
+<footer class="fade">
 <p><b>StageCraft</b></p>
 <p>📞 8861605754</p>
 <p>✉️ rjarif45@gmail.com</p>
 <p>India</p>
 </footer>
+
+<script>
+const obs=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting) e.target.classList.add("show");
+});
+},{threshold:.2});
+
+document.querySelectorAll(".fade").forEach(el=>obs.observe(el));
+</script>
 
 </body>
 </html>
